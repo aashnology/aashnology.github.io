@@ -1,0 +1,102 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Aashna · Portfolio</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Ctext y='8.5' font-size='8'%3E🐶%3C/text%3E%3C/svg%3E">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#2a1a2e;--pink:#ff2e97;--mag:#a0125a;--soft:#f2cdd9;--lav:#dca0d6;--cream:#faf3e0;--night:#1a0b2e}
+*{box-sizing:border-box}html,body{margin:0;height:100%;background:var(--night);color:var(--ink);font:21px 'VT323',monospace}
+.px,h1,h2,h3,.tab,.btn{font-family:'Press Start 2P',monospace}
+.scr{position:fixed;inset:0;display:none}.scr.on{display:flex}
+#desk{background:#20103a;align-items:center;justify-content:center}
+#sv{width:100%;height:100%;transition:transform 1.1s cubic-bezier(.6,0,.3,1),opacity 1.1s;transform-origin:50% 47%}
+#desk.zoom #sv{transform:scale(4.2);opacity:0}
+#mon{cursor:pointer}#mon:hover .gl,#mon:focus .gl{fill:#2a1850}
+.tw{animation:tw 1.8s steps(1) infinite}.bl{animation:tw 1s steps(1) infinite}@keyframes tw{50%{opacity:.15}}
+#start{background:#2b1850;align-items:center;justify-content:center}
+.crt{width:min(720px,94vw);aspect-ratio:4/3;max-height:92vh;border-radius:34px;border:10px solid #6a5acd;background:#3a1f5e;color:var(--cream);position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4vh;box-shadow:inset 0 0 60px #0006;background-image:linear-gradient(#ffffff10 1px,transparent 1px),linear-gradient(90deg,#ffffff10 1px,transparent 1px);background-size:48px 48px}
+.hs{position:absolute;top:5%;left:7%;font:12px 'Press Start 2P'}.hs b{display:block;color:#ffb347;margin-top:6px}
+.hr{position:absolute;top:5%;right:7%;color:var(--pink);font-size:26px;letter-spacing:4px}
+.crt h1{margin:0;font-size:clamp(34px,9vw,72px);color:var(--pink);text-shadow:4px 4px 0 #ffb347}
+.crt p{font:clamp(10px,2.4vw,15px) 'Press Start 2P';margin:0}
+.yn{display:flex;gap:7vw}.btn{background:none;border:0;color:var(--cream);font-size:clamp(14px,3.6vw,24px);cursor:pointer;padding:8px}
+.btn.sel::after{content:' ◀';color:#ffb347}
+#files{background:#f6dbe8;flex-direction:column;align-items:center;overflow:auto}
+#files h1{font-size:clamp(22px,6vw,44px);margin:6vh 0 8px;text-align:center;line-height:1.3}
+#files .sub{margin:0 12px 26px;text-align:center;color:var(--mag)}
+.stack{width:min(660px,92vw);margin-bottom:80px;padding-bottom:50px}
+.f{display:block;position:relative;width:100%;height:78px;margin-top:-28px;border:0;padding:0;cursor:pointer;transition:transform .25s;text-align:left;font:inherit;color:var(--ink)}
+.f:first-child{margin-top:0}.f:hover,.f:focus-visible{transform:translateY(-16px);outline:0}
+.tab{position:absolute;top:0;height:32px;padding:10px 14px;border-radius:12px 12px 0 0;font-size:10px;background:inherit;white-space:nowrap}
+.bd{position:absolute;top:30px;left:0;right:0;height:90px;border-radius:0 16px 0 0;background:inherit;box-shadow:0 -2px 0 #0002;padding:8px 16px}
+#files .f{background:var(--c)}
+#panel{position:fixed;inset:0;background:#1a0b2eb0;display:none;align-items:center;justify-content:center;padding:14px;z-index:9}
+#panel.on{display:flex}
+.win{width:min(680px,100%);max-height:88vh;display:flex;flex-direction:column;background:var(--soft);border:3px solid #1a1a1a;border-radius:16px;box-shadow:-12px 12px 0 var(--lav);animation:pop .25s}
+@keyframes pop{from{transform:scale(.9);opacity:0}}
+.bar{background:var(--cream);border-bottom:3px solid #1a1a1a;border-radius:13px 13px 0 0;padding:10px 14px;display:flex;align-items:center;gap:8px;font:10px 'Press Start 2P';color:var(--mag)}
+.dot{width:14px;height:14px;border-radius:50%;background:#e07a30}.bar .x{margin-left:auto;background:none;border:0;font:inherit;color:var(--mag);cursor:pointer}
+.in{padding:6px 20px 22px;overflow:auto}
+h2{font-size:15px;line-height:1.5;color:var(--mag)}h3{font-size:11px;color:var(--mag);margin:18px 0 6px}
+.kv{display:grid;grid-template-columns:130px 1fr;gap:4px 10px}.kv b{color:var(--mag)}
+.chip{display:inline-block;background:var(--cream);border:2px solid #1a1a1a;border-radius:8px;padding:2px 10px;margin:3px 4px 3px 0;font-size:19px}
+.card{background:var(--cream);border:2px solid #1a1a1a;border-radius:10px;padding:8px 14px;margin:10px 0}.card b{color:var(--mag)}
+.todo{background:#fff3a8;border:1px dashed #b38600;border-radius:4px;padding:0 4px}
+a{color:var(--mag)}ul{padding-left:20px;margin:4px 0}
+.home{position:fixed;top:10px;left:10px;font:9px 'Press Start 2P';background:var(--cream);border:2px solid #1a1a1a;border-radius:8px;padding:8px;cursor:pointer;z-index:2}
+</style></head><body>
+<section id="desk" class="scr on"><svg id="sv" viewBox="0 0 320 180" shape-rendering="crispEdges" role="img" aria-label="Pixel art desk at night. Click the monitor to start."></svg></section>
+<section id="start" class="scr"><div class="crt"><div class="hs">PLAYER<b>AASHNA</b></div><div class="hr">♥♥♥♥♥</div><h1>START</h1><p>ARE YOU READY?</p><div class="yn"><button class="btn sel" id="yes">YES</button><button class="btn" id="no">NO</button></div></div></section>
+<section id="files" class="scr"><button class="home" id="home">⌂ DESK</button><h1>I'm Aashna.</h1><div class="sub">Data analyst in the making · pick a folder to see what's inside</div><div class="stack" id="stack"></div></section>
+<div id="panel"><div class="win" role="dialog" aria-modal="true"><div class="bar"><i class="dot"></i><i class="dot"></i><i class="dot"></i><span id="pt" style="margin-left:10px"></span><button class="x" id="cl" aria-label="Close">✕ CLOSE</button></div><div class="in" id="pc"></div></div></div>
+<script>
+const $=s=>document.querySelector(s),R=(a,b)=>a+Math.floor(Math.random()*(b-a));
+// ---------- desk scene ----------
+let h='<rect width="320" height="180" fill="#20103a"/><rect y="60" width="320" height="60" fill="#2a1648"/>';
+for(let i=0;i<70;i++)h+=`<rect class="${i%4?'':'tw'}" x="${R(0,320)}" y="${R(0,90)}" width="1" height="1" fill="#fff" style="animation-delay:${R(0,20)/10}s"/>`;
+h+='<circle cx="288" cy="24" r="9" fill="#d9b8f0"/><circle cx="291" cy="21" r="3" fill="#bf9ad9"/>';
+for(let x=-4;x<320;){const w=R(14,24),t=R(40,84),y=120-t;h+=`<rect x="${x}" y="${y}" width="${w}" height="${t}" fill="#3a2358"/>`;
+ for(let wx=x+3;wx<x+w-3;wx+=4)for(let wy=y+4;wy<118;wy+=5)if(Math.random()>.55)h+=`<rect x="${wx}" y="${wy}" width="2" height="2" fill="#f3d1ff"/>`;x+=w+R(1,5)}
+h+='<rect x="52" y="64" width="2" height="56" fill="#4f8a55"/>';
+for(let i=0;i<7;i++){const y=70+i*7,s=i%2?1:-1;h+=`<rect x="${s>0?54:40}" y="${y}" width="14" height="3" fill="#5f9a60"/><rect x="${s>0?66:38}" y="${y+2}" width="4" height="2" fill="#4f8a55"/>`}
+h+='<rect x="6" y="34" width="30" height="42" fill="#5a3a63"/><rect x="8" y="36" width="26" height="38" fill="#6f4a78"/><circle cx="21" cy="50" r="7" fill="#f7e26b"/><circle cx="24" cy="48" r="6" fill="#6f4a78"/><rect x="14" y="52" width="14" height="8" fill="#fff0f5"/><text x="21" y="68" font-size="4.5" fill="#fff0f5" text-anchor="middle" font-family="Press Start 2P,monospace">KEEP</text><text x="21" y="73" font-size="4.5" fill="#fff0f5" text-anchor="middle" font-family="Press Start 2P,monospace">GOING</text>';
+h+='<rect y="18" width="320" height="1" fill="#6a5a78"/>';
+for(let i=0;i<23;i++)h+=`<rect class="tw" x="${i*14+4}" y="19" width="2" height="2" fill="#ffd966" style="animation-delay:${i%5*.3}s"/>`;
+h+='<rect y="120" width="320" height="60" fill="#8d6a8e"/><rect y="120" width="320" height="2" fill="#a885a9"/>';
+h+='<rect x="22" y="140" width="28" height="22" fill="#c4486c"/><rect x="24" y="142" width="26" height="20" fill="#e86a8a"/><text x="37" y="154" font-size="4" fill="#fff" text-anchor="middle" font-family="Press Start 2P,monospace">BIO</text><text x="37" y="159" font-size="3.4" fill="#fff" text-anchor="middle" font-family="Press Start 2P,monospace">LOGY</text>';
+h+='<rect x="62" y="150" width="20" height="2" fill="#c4486c" transform="rotate(-35 62 150)"/>';
+h+='<rect x="108" y="138" width="104" height="34" rx="4" fill="#a58aa8"/>';
+for(let r=0;r<4;r++)for(let c=0;c<14;c++)h+=`<rect x="${124+c*5}" y="${147+r*4}" width="4" height="3" fill="${(r+c)%3?'#fff0f5':'#ff9ccc'}"/>`;
+h+='<rect x="206" y="148" width="5" height="8" rx="2" fill="#fff0f5"/>';
+h+='<ellipse cx="248" cy="150" rx="22" ry="8" fill="#ff9ccc" opacity=".25"/><rect x="246" y="96" width="3" height="62" fill="#e8c6d4"/><rect x="236" y="158" width="24" height="5" fill="#e8c6d4"/><polygon points="226,78 262,78 268,96 222,96" fill="#f7c7dc"/><rect x="224" y="94" width="42" height="3" fill="#fff0f5"/>';
+h+='<rect x="290" y="144" width="20" height="24" fill="#c4486c"/><rect x="292" y="146" width="16" height="20" fill="#f2cdd9"/><rect x="295" y="149" width="10" height="12" fill="#3a2358"/><rect x="297" y="152" width="6" height="6" fill="#f3c9a0"/>';
+h+='<rect x="153" y="116" width="14" height="14" fill="#c98a9b"/><rect x="140" y="128" width="40" height="5" fill="#c98a9b"/>';
+h+='<g id="mon" tabindex="0" role="button" aria-label="Click the monitor to start"><rect x="96" y="52" width="128" height="68" rx="2" fill="#c98a9b"/><rect class="gl" x="100" y="56" width="120" height="58" fill="#0d0a12"/><text x="160" y="82" font-size="6" fill="#39ff88" text-anchor="middle" font-family="Press Start 2P,monospace">AASHNA.EXE</text><text class="bl" x="160" y="98" font-size="5" fill="#ff9ccc" text-anchor="middle" font-family="Press Start 2P,monospace">▶ CLICK TO START</text></g>';
+$('#sv').innerHTML=h;
+// ---------- flow ----------
+const show=id=>document.querySelectorAll('.scr').forEach(e=>e.classList.toggle('on',e.id==id));
+const goStart=()=>{$('#desk').classList.add('zoom');setTimeout(()=>show('start'),950)};
+$('#mon').onclick=goStart;$('#mon').onkeydown=e=>{if(e.key=='Enter'||e.key==' ')goStart()};
+const reset=()=>{$('#desk').classList.remove('zoom');show('desk')};
+$('#home').onclick=reset;
+let sel='yes';const pick=v=>{sel=v;$('#yes').classList.toggle('sel',v=='yes');$('#no').classList.toggle('sel',v=='no')};
+$('#yes').onmouseenter=()=>pick('yes');$('#no').onmouseenter=()=>pick('no');
+const confirm=()=>sel=='yes'?show('files'):reset();
+$('#yes').onclick=()=>{pick('yes');confirm()};$('#no').onclick=()=>{pick('no');confirm()};
+addEventListener('keydown',e=>{if($('#start').classList.contains('on')){if(e.key=='ArrowLeft')pick('yes');if(e.key=='ArrowRight')pick('no');if(e.key=='Enter')confirm()}if(e.key=='Escape')$('#panel').classList.remove('on')});
+// ---------- content (EDIT HERE) ----------
+const T=t=>`<span class="todo">${t}</span>`,chips=a=>a.map(t=>`<span class="chip">${t}</span>`).join(''),
+kv=a=>'<div class="kv">'+a.map(([k,v])=>`<b>${k}</b><span>${v}</span>`).join('')+'</div>',
+ul=a=>'<ul>'+a.map(t=>`<li>${t}</li>`).join('')+'</ul>';
+const F=[
+['about me','who I am','#ff9ccc',24,'about.exe',()=>`<h2>Hello!! I'm Aashna</h2><p>B.Tech student in Bioinformatics & Data Science with a deep passion for music and data.</p><p>I've been a hardcore Spotify & Pinterest kinda girlie since 2019: I read Wrapped like scripture and curate playlists like a second language. Now I'm building tools to analyze, understand, and personalize my musical and aesthetic doom-scrolling through vibe coding and machine learning.</p>`+kv([['player','Aashna'],['languages','English · Hindi · Bengali · German'],['obsessed with','recommendation algorithms, product analytics, pipeline automation'],['mission','become a data analyst at Spotify / Pinterest'],['status','undergraduate · looking for opportunities']])],
+['education','where I study','#ffd6a5',230,'education.log',()=>`<h2>Training Log</h2><div class="card"><b>B.Tech, Bioinformatics & Data Science</b><br>D.Y. Patil deemed to be University, School of Biotechnology and Bioinformatics<br>2023 – 2028</div>`],
+['internships','where I\'ve worked','#cdb4ff',420,'internships.txt',()=>`<h2>Internships</h2>`+[["Business Development Intern", "Saregama India Ltd.", "Jun 2026 – Aug 2026 · 3 mos", "Mumbai Metropolitan Region · On-site", ["<b>Data Engineering & Quality:</b> Cleaned, standardized and structured raw customer and transaction data across multiple sources using advanced Excel, resolving formatting issues, duplicates and nulls for downstream analytics.", "<b>Audience Segmentation & Profiling:</b> Developed dynamic audience tagging logic to classify customer cohorts, surfacing key behavioral patterns to optimize targeted marketing strategies.", "<b>Campaign Operations:</b> Created de-duplicated, consent-verified Target Groups (TGs) and partnered with the Tech team to integrate segment lists into third-party WhatsApp platforms for execution.", "<b>Performance Analytics & Reporting:</b> Tracked key campaign metrics (delivery, CTR, opt-outs, conversions) and built structured Excel performance dashboards to measure segment-level engagement over time.", "<b>Data-Driven Insights:</b> Synthesized cross-campaign trends into actionable recommendations, continuously refining segment definitions and message-fit strategies to improve overall conversion rates.", "<b>Documentation & Process Optimization:</b> Established detailed TG definitions and workflow documentation to ensure campaign logic could be reliably replicated and scaled across future business cycles."]], ["Client Servicing Intern", "The Popcorn Media (Influencer Marketing Platform)", "Apr 2026 – May 2026 · 2 mos", "Mumbai · Remote", ["Managed and updated creator tracking databases using Google Sheets to ensure 100% accuracy in campaign deliverables.", "Handled remote client communications, translating campaign metrics and updates into clear status reports.", "Calculated key performance indicators (KPIs) like engagement rates and cost-per-click to evaluate campaign performance through the operations team."]], ["Project Management Intern", "Alivus Life Sciences", "Jan 2026 – Feb 2026 · 2 mos", "Mahape, Navi Mumbai · On-site", ["Coordinated project timelines and cross-functional deliverables, ensuring milestones were met ahead of schedule.", "Utilized project tracking tools and Excel to monitor resource allocation within internal laboratories, project health and status updates.", "Prepared consolidated progress reports and facilitated clear communication between internal teams and stakeholders."]]].map(([r,c,d,l,b])=>`<div class="card"><b>${r}</b><br>${c}<br>${d} · ${l}${ul(b)}</div>`).join('')],
+['projects','things I built','#ffb3c7',110,'projects.exe',()=>`<h2>Missions</h2>`+[["kkbox-churn-retention", "Subscription churn prediction and cohort retention analysis using the KKBox dataset from Kaggle 2018."], ["skip-behavior-analysis", "Predicts early track skips in listening sessions using Last.fm log data and Spotify audio features, comparing Logistic Regression vs. XGBoost models and evaluating SHAP feature importance."], ["KyuYaar", "An AI system that investigates why a business metric changed, weighs competing hypotheses against real evidence and hands a human decision options instead of a guess."], ["My-Woofie", "A digital companion: a pixel-art desktop puppy that follows your cursor and nudges you to take breaks (Python, PyQt6)."], ["Isse-Automate-Kardo", "Isse Automate Kardo finds the repetitive workflows hiding in your activity data, shows where the time goes and why, and proposes automating the low-judgment steps. Nothing runs until you say yes. Hexi, its assistant, answers by voice or text through an MCP server."]].map(([n,d])=>`<div class="card"><b>${n}</b><br>${d}<br><a href="https://github.com/aashnology/${n}" target="_blank" rel="noopener">github.com/aashnology/${n}</a></div>`).join('')],
+['tech stack','my weapons','#bde8d0',330,'techstack.exe',()=>`<h2>Weapons Mastery</h2><h3>MAIN WEAPONS</h3>${chips(['Python','SQL','R','Power BI','Docker'])}<h3>ANALYST LOADOUT</h3>${chips(['Pandas','Jupyter','scikit-learn','Git','Excel'])}<h3>SIDE WEAPONS</h3>${chips(['C','C#','HTML5','PHP'])}`],
+['skills','what I can do','#ffe6a7',40,'skills.txt',()=>`<h2>Skills Mastery</h2><h3>DATA & ANALYSIS</h3>${ul(['Advanced SQL & Database Management','Exploratory Data Analysis & Statistics (hypothesis testing, A/B testing)','Data Visualization & Dashboarding (Power BI, Tableau, Matplotlib)'])}<h3>MACHINE LEARNING & AUTOMATION</h3>${ul(['Recommendation Systems & Collaborative Filtering (Spotify/Pinterest style)','Pipeline Automation & ETL Workflows (Python, Docker, Airflow basics)','Predictive Modeling & User Segmentation (clustering, classification)'])}<h3>PRODUCT & DOMAIN THINKING</h3>${ul(['Product Analytics (funnel analysis, retention metrics, user journey mapping)','Music & Recommendation System Logic (playlist algorithms, collaborative filtering)'])}`],
+['contact me','say hi','#ff8fb8',260,'contact.exe',()=>`<h2>Save Point</h2>`+kv([['LinkedIn','<a href="https://www.linkedin.com/in/aashnadataanalyst" target="_blank" rel="noopener">https://www.linkedin.com/in/aashnadataanalyst</a>'],['GitHub','<a href="https://github.com/aashnology" target="_blank" rel="noopener">https://github.com/aashnology</a>'],['Email','<a href="mailto:aashna.chakrabortyy@gmail.com">aashna.chakrabortyy@gmail.com</a>']])+`<p>Open to internships and opportunities. Insert coin to collaborate ★</p>`]];
+$('#stack').innerHTML=F.map((f,i)=>`<button class="f" style="--c:${f[2]};z-index:${i+1}" data-i="${i}"><span class="tab" style="left:${f[3]}px">${f[0].toUpperCase()}</span><span class="bd">${f[1]} →</span></button>`).join('');
+const open=i=>{$('#pt').textContent=F[i][4];$('#pc').innerHTML=F[i][5]();$('#panel').classList.add('on');$('#pc').scrollTop=0};
+document.querySelectorAll('.f').forEach(b=>b.onclick=()=>open(+b.dataset.i));
+$('#cl').onclick=()=>$('#panel').classList.remove('on');$('#panel').onclick=e=>{if(e.target.id=='panel')$('#panel').classList.remove('on')};
+</script></body></html>
